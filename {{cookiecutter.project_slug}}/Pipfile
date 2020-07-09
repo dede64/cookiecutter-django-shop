@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-Django = ">=3"
+Django = "==2.2.14"
 {% if cookiecutter.use_compressor == 'y' -%}
 django-compressor = "*"
 {% endif -%}
