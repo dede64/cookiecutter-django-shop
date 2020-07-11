@@ -240,3 +240,6 @@ demo, but feel free to apply for your own ones and add them to the appropriate p
 By answering the Cookiecutter builder with YES to `use_sendcloud`, [SendCloud](https://www.sendcloud.com/)
 support is added to the project. You have to apply for your own ones credentials, since SendCloud
 does not offer any sandboxing.
+
+To run fabric commands type: `pipenv run fab command_name`  
+To list all fabric commands type: `pipenv run fab -l`  
