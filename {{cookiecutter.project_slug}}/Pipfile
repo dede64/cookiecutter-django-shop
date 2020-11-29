@@ -11,7 +11,7 @@ django-compressor = "*"
 django-allauth = "*"
 django-angular = ">=2.3"
 django-filer = "*"
-django-ipware = "==2.1.0"
+django-ipware = "==3.0.2"
 django-sass-processor = "*"
 django-select2 = "*"
 django-filter = "*"
@@ -68,7 +68,7 @@ factory-boy = "*"
 pytest-factoryboy = "*"
 
 [requires]
-python_version = "3.5"
+python_version = "{{cookiecutter.python_version}}"
 
 [pipenv]
 allow_prereleases = true

@@ -1,0 +1,35 @@
+version: '2.0'  # or later
+
+services:
+  nginx-proxy:
+    restart: always
+    image: jwilder/nginx-proxy:latest
+    ports:
+      - '8084:80'
+      - '443:443'
+    volumes:
+      - nginxcerts:/etc/nginx/certs:ro
+      - nginxvhostd:/etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - nginx-proxy
+
+  letsencrypt-nginx-proxy-companion:
+    restart: always
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    # environment:  # remove this fake certificate in production
+    # - ACME_CA_URI=https://acme-staging.api.letsencrypt.org/directory
+    volumes:
+      - nginxcerts:/etc/nginx/certs:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    volumes_from:
+      - nginx-proxy
+
+networks:
+  nginx-proxy:
+    external: true
+
+volumes:
+  nginxcerts:
+  nginxvhostd:

@@ -9,6 +9,7 @@
   "virtual_host": "www.example.com",
   "version": "1.0.0",
   "timezone": "UTC",
+  "python_version": "3.7",
   "dockerize": [
     "n",
     "runserver",
@@ -31,7 +32,7 @@
     "smartcard",
     "commodity"
   ],
-  "use_compressor": "n",
+  "use_compressor": "y",
   "use_elasticsearch": "y",
   "stock_management": [
     "simple",

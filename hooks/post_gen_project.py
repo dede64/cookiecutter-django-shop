@@ -159,10 +159,10 @@ def pipenv_to_requirements():
     ret = subprocess.check_output(['pipenv', 'lock', '--requirements'])
     with open('requirements.txt', 'w') as fh:
         fh.write(ret.decode('utf-8'))
-        
+
 def poetry_to_requirements():
     cmd = "poetry install;"
-    subprocess.run(cmd, shell=True)    
+    subprocess.run(cmd, shell=True)
 
 def set_flags_in_envs_deprecated(
     postgres_user,
@@ -218,8 +218,18 @@ pipenv run ./manage.py runserver
         set_database_password("docker-files/databases.environ")
         next_steps += """
 cd {{ cookiecutter.project_slug }}
-docker-compose up --build -d
+docker-compose up --build
 """
+
+    if "{{ cookiecutter.dockerize }}" == "nginx":
+        next_steps += """
+
+open separate terminal window
+cd nginx
+docker-compose up
+your app will be available on {{ cookiecutter.virtual_host }}
+"""
+
     print(HINT + next_steps + TERMINATOR)
     reformat_white_space()
     print(SUCCESS + "Project initialized, keep up the good work!" + TERMINATOR)
