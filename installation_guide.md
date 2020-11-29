@@ -94,3 +94,16 @@
     * ### debug
         * Debug settings for django
         * ! Must be set to False when dockerize is enabled (not 0)
+## Build docker images
+* You will be promted to go inside the created django-project folder
+    * `cd app_name`
+* Then run docker-compose to build and run the project
+    * (This and following commands may be only run only under a sudo permissions on your system.)
+    * `docker network create nginx-proxy`
+    * `docker volume create --name=nginxproxy_nginxvhostd`
+    * `docker-compose up --build`
+* Open separate console or console tab
+* Go to nginx folder inside the django project
+    * `cd app_name/nginx`
+* Run docker-compose to start nginx container
+    * `docker-compose up`
