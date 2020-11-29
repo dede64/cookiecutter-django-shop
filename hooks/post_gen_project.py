@@ -225,7 +225,7 @@ docker-compose up --build
         next_steps += """
 
 open separate terminal window
-cd nginx
+cd {{ cookiecutter.project_slug }}/nginx
 docker-compose up
 your app will be available on {{ cookiecutter.virtual_host }}
 """
