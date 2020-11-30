@@ -4,7 +4,7 @@
 * Check if python 3.x is installed.
     * If not, install python>=3.5.
 * Check if command `python` opens python3.x
-    * If command `python` opens a python3.y, you will need to set the default python executable by these commands:
+    * If command `python` opens a python2.y, you will need to set the default python executable by these commands:
     * `sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 2`
     * `sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 3`
     * now by default will be used the 3.x version
