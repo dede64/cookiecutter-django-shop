@@ -38,6 +38,8 @@
         * The email address you want to identify yourself in the project.
     * ### virtual_host
         * The domain name you plan to use for your project once it goes live. Note that it can be safely changed later on whenever you need to.
+        * If you dont have domain name yet set, it to `server IP address`
+        * If you are testing it on a localhost, set it to `localhost`
     * ### version
         * The version of the project at its inception.
     * ### timezone
